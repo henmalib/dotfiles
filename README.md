@@ -13,5 +13,4 @@ yay -S spotifywm-git
 ```
 
 > [!WARNING]  
-> `swaylock` and `hyprpaper` are using Pictures inside ~/Pictures/Wallpaper
-> This folder is NOT specified in this repository
+> `swaylock` and `hyprpaper` are using Pictures inside ~/Pictures/Wallpaper which is NOT specified in this repository
