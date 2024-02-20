@@ -12,7 +12,7 @@ opt.relativenumber = true
 
 opt.backup = false
 opt.swapfile = false
-opt.undodir = os.getenv('HOME') .. '/.vim/undodir'
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 
 opt.tabstop = 4

@@ -1,1 +1,1 @@
-require('config.opts')
+require("config.opts")

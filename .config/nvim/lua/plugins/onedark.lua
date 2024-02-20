@@ -1,14 +1,14 @@
 return {
 	"navarasu/onedark.nvim",
-    lazy = false,
-    priority = 1000,
+	lazy = false,
+	priority = 1000,
 	config = function()
-		onedark = require('onedark')
-		onedark.setup {
+		local onedark = require("onedark")
+		onedark.setup({
 			style = "deep",
-			transparent = true
-		}
+			transparent = true,
+		})
 
 		onedark.load()
-	end
+	end,
 }
