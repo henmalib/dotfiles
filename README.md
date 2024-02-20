@@ -7,9 +7,9 @@ cd dotfiles
 stow .
 ```
 
-### For propper spotify and telegram window
+### For propper spotify window and telegram malloc
 ```bash
-yay -S spotifywm-git
+yay -S spotifywm-git jemalloc
 ```
 
 > [!WARNING]  
