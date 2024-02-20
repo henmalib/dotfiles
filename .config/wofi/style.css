@@ -1,0 +1,30 @@
+#window {
+    background: transparent;
+}
+
+#input {
+    margin-bottom: 10px;
+}
+
+#input, #scroll {
+    border-color: #c678dd;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #282c34;
+}
+
+#text {
+    color: #abb2bf;
+    margin-left: 1rem;
+}
+#img {
+    margin-left: 1rem;
+}
+
+#text:selected {
+    color: white;
+}
+#entry:selected {
+    background: #c678dd;
+    outline: none;
+}

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+export DSL_VIDEODRIVER=wayland
+export QT_QPA_PLATFORM=wayland
+export CLUTTER_BACKEND=wayland
+export MOZ_ENABLE_WAYLAND=1
+export GTK_THEME=Adwaita:dark
+export GPG_TTY=$(tty)
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+export XDG_CURRENT_DESKTOP=Hyprland
+export XDG_SESSION_DESKTOP=Hyprland
+export XDG_SESSION_TYPE=wayland
+
+export GDK_BACKEND=wayland,x11
+
+export QT_QPA_PLATFORMTHEME=gtk3
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_WAYLAND+DISABLE_WINDOWDECORATION=1
+
+export EDITOR=nvim
+
+export JAVA_HOME=/usr/lib/jvm/default/
+
+exec Hyprland

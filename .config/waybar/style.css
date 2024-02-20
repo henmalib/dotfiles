@@ -1,0 +1,159 @@
+* {
+  font-family: Cozette; /* "Font Awesome 6 Free", Roboto, Helvetica, Arial; */
+  font-size: 13px;
+}
+
+@define-color pulseaudio-text #f1c40f;
+@define-color memory-text #9b59b6;
+@define-color cpu-text #2ecc71;
+@define-color network-text #2980b9;
+@define-color network-text-disconnected #f53c3c;
+@define-color keyboard-layout #00b093;
+
+@define-color workspaces-notify-text #eb4d4b;
+@define-color workspaces-active-text @keyboard-layout;
+
+@define-color battery-charging-text #26a65b;
+
+window#waybar {
+  background-color: rgba(43, 48, 59, 1);
+  border-top: 3px solid rgba(100, 114, 125, 1);
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  background-color: transparent;
+  color: #ffffff;
+  box-shadow: inset 0 -3px transparent;
+  border: none;
+  border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 -3px red;
+}
+
+#workspaces button.urgent {
+  color: @workspaces-notify-text;
+}
+
+#workspaces button.active {
+  color: @workspaces-active-text;
+}
+
+#mode {
+  background-color: #64727d;
+  border-bottom: 3px solid #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd {
+  padding: 0 10px;
+  padding: 0;
+}
+
+#window,
+#workspaces {
+  margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#clock {
+  color: #64727d;
+}
+
+#battery {
+  color: lime;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: @battery-charging-text;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#cpu {
+  color: @cpu-text;
+}
+
+#memory {
+  color: @memory-text;
+}
+
+#network {
+  color: @network-text;
+}
+
+#network.disconnected {
+  color: @network-text-disconnected;
+}
+
+#pulseaudio {
+  color: @pulseaudio-text;
+}
+
+#language {
+  color: @keyboard-layout;
+}
+
+#keyboard-state {
+  color: #000000;
+  padding: 0 0px;
+  margin: 0 5px;
+  min-width: 16px;
+}
+
+#custom-recorder {
+  color: #ff0f0f;
+  padding-left: 4px;
+}
