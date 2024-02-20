@@ -1,5 +1,5 @@
 -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/lua/lsp-zero/cmp-mapping.lua
-local function tab_complete()
+local function tab_complete(select_opts)
 	local cmp = require("cmp")
 	return cmp.mapping(function(fallback)
 		local col = vim.fn.col(".") - 1
