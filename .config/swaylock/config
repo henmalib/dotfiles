@@ -1,6 +1,6 @@
 # Background
 color=#000000
-image=/home/simidzu/Pictures/Wallpaper/lock.jpg
+image=~/Pictures/Wallpaper/lock.jpg
 scaling=fill
 
 # Password input (i -> light r -> dark)
