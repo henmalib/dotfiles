@@ -1,4 +1,4 @@
-local servers = { "html", "tsserver", "lua_ls" }
+local servers = { "html", "tsserver", "lua_ls", "gopls" }
 
 local function extend_table(defaults)
 	return function(add)
@@ -42,7 +42,7 @@ return {
 			vim.keymap.set("n", "gi", ":Telescope lsp_implementation", opts)
 
 			opts.desc = "Show code action"
-			vim.keymap.set({ "n", "v" }, "<F4>", vim.lsp.buf.code_action, opts)
+			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
 			opts.desc = "Smart rename"
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)

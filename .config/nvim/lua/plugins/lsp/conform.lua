@@ -15,6 +15,7 @@ return {
 				html = { "prettierd" },
 				json = { "prettierd" },
 				lua = { "stylua" },
+				go = { "gofmt" },
 			},
 			format_on_save = {
 				timeout_ms = 500,
