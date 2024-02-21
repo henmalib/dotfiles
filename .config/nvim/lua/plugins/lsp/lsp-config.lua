@@ -39,7 +39,7 @@ return {
 			vim.keymap.set("n", "gd", ":Telescope lsp_definition<cr>", opts)
 
 			opts.desc = "Go to LSP implementation"
-			vim.keymap.set("n", "gi", ":Telescope lsp_implementation", opts)
+			vim.keymap.set("n", "gi", ":Telescope lsp_implementation<cr>", opts)
 
 			opts.desc = "Open diagnostics float window"
 			vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
