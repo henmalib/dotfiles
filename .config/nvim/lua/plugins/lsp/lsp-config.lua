@@ -41,6 +41,9 @@ return {
 			opts.desc = "Go to LSP implementation"
 			vim.keymap.set("n", "gi", ":Telescope lsp_implementation", opts)
 
+			opts.desc = "Open diagnostics float window"
+			vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
+
 			opts.desc = "Show code action"
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
