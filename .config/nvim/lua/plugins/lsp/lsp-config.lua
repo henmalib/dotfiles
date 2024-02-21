@@ -36,7 +36,7 @@ return {
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 
 			opts.desc = "Go to LSP definition"
-			vim.keymap.set("n", "gd", ":Telescope lsp_definition<cr>", opts)
+			vim.keymap.set("n", "gd", ":Telescope lsp_definitions<cr>", opts)
 
 			opts.desc = "Go to LSP implementation"
 			vim.keymap.set("n", "gi", ":Telescope lsp_implementation<cr>", opts)
