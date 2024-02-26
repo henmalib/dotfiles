@@ -1,11 +1,9 @@
 return {
 	"andweeb/presence.nvim",
-	config = function()
-		local presence = require("presence")
-
-		presence.setup({
-			main_image = "file",
-			enable_line_number = true,
-		})
-	end,
+	event = { "BufReadPre", "BufNewFile" },
+	opts = {
+		main_image = "file",
+		enable_line_number = true,
+		buttons = false,
+	},
 }

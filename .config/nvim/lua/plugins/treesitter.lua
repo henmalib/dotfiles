@@ -21,7 +21,7 @@ return {
 			highlight = { enable = true },
 			autotag = { enable = true },
 			indent = { enable = true },
-			ranbow = { enable = true },
+			rainbow = { enable = true },
 		})
 	end,
 }
