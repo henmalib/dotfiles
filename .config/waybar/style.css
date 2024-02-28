@@ -1,104 +1,58 @@
 * {
-  font-family: Cozette; /* "Font Awesome 6 Free", Roboto, Helvetica, Arial; */
+  font-family:
+    MonaspiceKr Nerd Font,
+    "Font Awesome 6 Free",
+    monospace; /* "Font Awesome 6 Free", Roboto, Helvetica, Arial; */
+  font-style: normal;
   font-size: 13px;
 }
 
-@define-color pulseaudio-text #f1c40f;
-@define-color memory-text #9b59b6;
-@define-color cpu-text #2ecc71;
-@define-color network-text #2980b9;
-@define-color network-text-disconnected #f53c3c;
-@define-color keyboard-layout #00b093;
+@define-color rosewater rgb(245, 224, 220);
+@define-color flamingo rgb(242, 205, 205);
+@define-color pink rgb(245, 194, 231);
+@define-color mauve rgb(203, 166, 247);
+@define-color red rgb(243, 139, 168);
+@define-color maroon rgb(235, 160, 172);
+@define-color peach rgb(250, 179, 135);
+@define-color yellow rgb(249, 226, 175);
+@define-color green rgb(166, 227, 161);
+@define-color teal rgb(148, 226, 213);
+@define-color sky rgb(137, 220, 235);
+@define-color sapphire rgb(116, 199, 236);
+@define-color blue rgb(137, 180, 250);
+@define-color lavander rgb(180, 190, 254);
 
-@define-color workspaces-notify-text #eb4d4b;
-@define-color workspaces-active-text @keyboard-layout;
+@define-color text rgb(205, 214, 244);
+@define-color subtext1 rgb(186, 194, 222);
+@define-color subtext0 rgb(166, 173, 200);
 
-@define-color battery-charging-text #26a65b;
+@define-color overlay2 rgb(147, 153, 178);
+@define-color overlay1 rgb(127, 132, 156);
+@define-color overlay0 rgb(108, 112, 134);
+
+@define-color surface2 rgb(88, 91, 112);
+@define-color surface1 rgb(69, 71, 90);
+@define-color surface0 rgb(49,50,68);
+
+@define-color base rgb(30,30,46);
+@define-color mantle rgb(24,24,37);
+@define-color crust rgb(17,17,27);
+
+window#waybar.top label.module {
+  box-shadow: inset 0 -3px;
+}
+window#waybar.bottom label.module {
+  box-shadow: inset 0 3px;
+}
 
 window#waybar {
-  background-color: rgba(43, 48, 59, 1);
-  border-top: 3px solid rgba(100, 114, 125, 1);
-  color: #ffffff;
-  transition-property: background-color;
-  transition-duration: 0.5s;
+  /* @base */
+  background: rgba(30, 30, 36, 0.5);
+  color: @text;
 }
 
 window#waybar.hidden {
   opacity: 0.2;
-}
-
-#workspaces button {
-  padding: 0 5px;
-  background-color: transparent;
-  color: #ffffff;
-  box-shadow: inset 0 -3px transparent;
-  border: none;
-  border-radius: 0;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-#workspaces button:hover {
-  background: rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 -3px red;
-}
-
-#workspaces button.urgent {
-  color: @workspaces-notify-text;
-}
-
-#workspaces button.active {
-  color: @workspaces-active-text;
-}
-
-#mode {
-  background-color: #64727d;
-  border-bottom: 3px solid #ffffff;
-}
-
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#mpd {
-  padding: 0 10px;
-  padding: 0;
-}
-
-#window,
-#workspaces {
-  margin: 0 4px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 0;
-}
-
-#clock {
-  color: #64727d;
-}
-
-#battery {
-  color: lime;
-}
-
-#battery.charging,
-#battery.plugged {
-  color: @battery-charging-text;
 }
 
 @keyframes blink {
@@ -106,6 +60,78 @@ window#waybar.hidden {
     background-color: #ffffff;
     color: #000000;
   }
+}
+#workspaces button {
+  color: @subtext1;
+}
+
+#workspaces button.urgent {
+  color: @red;
+}
+
+/* Disable default hovering effects */
+button {
+  border: none;
+  border-radius: 0;
+}
+button:hover {
+  box-shadow: inherit;
+  /* text-shadow: inherit; */
+  background: inherit;
+}
+
+#workspaces button:hover {
+  color: @mauve;
+}
+
+button:hover,
+button.focused,
+#workspaces button.active {
+  border: 0;
+  color: @mauve;
+}
+
+.modules-left,
+.modules-right,
+.modules-center {
+  padding: 8px 16px;
+  border-radius: 16px;
+  /*@base*/
+  background: rgba(30, 30, 36, 0.75);
+}
+
+/* We can't have this one yet */
+box.module:hover {
+  border-top: solid 2px @mauve;
+}
+
+.modules-left {
+  padding-left: 4px;
+}
+
+.modules-right {
+  padding-right: 4px;
+}
+
+#memory {
+  border-top: solid 1px @green;
+}
+
+#cpu {
+  border-top: solid 1px @lavender;
+}
+
+#backlight {
+  border-top: solid 1px @sky;
+}
+
+#clock {
+  border-top: solid 1px @mauve;
+}
+
+#pulseaudio,
+#pipewire {
+  border-top: solid 1px @red;
 }
 
 #battery.critical:not(.charging) {
@@ -118,42 +144,28 @@ window#waybar.hidden {
   animation-direction: alternate;
 }
 
-label:focus {
-  background-color: #000000;
-}
-
-#cpu {
-  color: @cpu-text;
-}
-
-#memory {
-  color: @memory-text;
+#battery {
+  border-top: solid 1px @green;
 }
 
 #network {
-  color: @network-text;
-}
-
-#network.disconnected {
-  color: @network-text-disconnected;
-}
-
-#pulseaudio {
-  color: @pulseaudio-text;
+  border-top: solid 1px @teal;
 }
 
 #language {
-  color: @keyboard-layout;
+  border-top: solid 1px @yellow;
 }
 
-#keyboard-state {
-  color: #000000;
-  padding: 0 0px;
-  margin: 0 5px;
-  min-width: 16px;
+.icon {
+  color: @blue;
 }
 
 #custom-recorder {
-  color: #ff0f0f;
+  color: @red;
   padding-left: 4px;
+}
+
+#window {
+  margin: 0 16px;
+  color: @subtext0;
 }

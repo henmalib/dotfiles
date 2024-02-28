@@ -1,4 +1,4 @@
-local servers = { "html", "tsserver", "lua_ls", "gopls" }
+local servers = { "lua_ls",  }
 
 local function extend_table(defaults)
 	return function(add)

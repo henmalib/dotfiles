@@ -1,5 +1,3 @@
-#!/bin/bash
-
 export DSL_VIDEODRIVER=wayland
 export QT_QPA_PLATFORM=wayland
 export CLUTTER_BACKEND=wayland

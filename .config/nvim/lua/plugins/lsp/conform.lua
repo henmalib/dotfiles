@@ -16,6 +16,7 @@ return {
 				json = { "prettierd" },
 				lua = { "stylua" },
 				go = { "gofmt" },
+                nix = {"nixpkgs_fmt"}
 			},
 			format_on_save = {
 				timeout_ms = 500,
