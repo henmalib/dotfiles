@@ -1,3 +1,5 @@
+@import url("./mocha.css");
+
 * {
   font-family:
     MonaspiceKr Nerd Font,
@@ -7,37 +9,6 @@
   font-size: 13px;
 }
 
-@define-color rosewater rgb(245, 224, 220);
-@define-color flamingo rgb(242, 205, 205);
-@define-color pink rgb(245, 194, 231);
-@define-color mauve rgb(203, 166, 247);
-@define-color red rgb(243, 139, 168);
-@define-color maroon rgb(235, 160, 172);
-@define-color peach rgb(250, 179, 135);
-@define-color yellow rgb(249, 226, 175);
-@define-color green rgb(166, 227, 161);
-@define-color teal rgb(148, 226, 213);
-@define-color sky rgb(137, 220, 235);
-@define-color sapphire rgb(116, 199, 236);
-@define-color blue rgb(137, 180, 250);
-@define-color lavander rgb(180, 190, 254);
-
-@define-color text rgb(205, 214, 244);
-@define-color subtext1 rgb(186, 194, 222);
-@define-color subtext0 rgb(166, 173, 200);
-
-@define-color overlay2 rgb(147, 153, 178);
-@define-color overlay1 rgb(127, 132, 156);
-@define-color overlay0 rgb(108, 112, 134);
-
-@define-color surface2 rgb(88, 91, 112);
-@define-color surface1 rgb(69, 71, 90);
-@define-color surface0 rgb(49,50,68);
-
-@define-color base rgb(30,30,46);
-@define-color mantle rgb(24,24,37);
-@define-color crust rgb(17,17,27);
-
 window#waybar.top label.module {
   box-shadow: inset 0 -3px;
 }
@@ -46,8 +17,10 @@ window#waybar.bottom label.module {
 }
 
 window#waybar {
-  /* @base */
+  /* @base
   background: rgba(30, 30, 36, 0.5);
+    */
+  background: transparent;
   color: @text;
 }
 
@@ -61,6 +34,12 @@ window#waybar.hidden {
     color: #000000;
   }
 }
+
+#workspaces {
+  border-radius: 16px;
+  border: 1px solid @mauve;
+}
+
 #workspaces button {
   color: @subtext1;
 }
@@ -96,13 +75,50 @@ button.focused,
 .modules-center {
   padding: 8px 16px;
   border-radius: 16px;
-  /*@base*/
+  /*@base
   background: rgba(30, 30, 36, 0.75);
+*/
 }
 
 /* We can't have this one yet */
 box.module:hover {
-  border-top: solid 2px @mauve;
+  border: solid 2px @mauve;
+}
+
+#cpu,
+#memory,
+#backlight,
+#custom-recorder,
+#workspaces,
+#pulseaudio,
+#network,
+#language,
+#battery,
+#clock,
+box.module {
+  padding: 2px 16px;
+  background: alpha(@base, 0.9);
+}
+
+#cpu,
+#pulseaudio {
+  border-bottom-left-radius: 16px;
+  border-top-left-radius: 16px;
+}
+
+#clock,
+#backlight {
+  border-bottom-right-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+#cpu {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+#memory {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .modules-left {
@@ -114,24 +130,24 @@ box.module:hover {
 }
 
 #memory {
-  border-top: solid 1px @green;
+  border: solid 1px @green;
 }
 
 #cpu {
-  border-top: solid 1px @lavender;
+  border: solid 1px @lavender;
 }
 
 #backlight {
-  border-top: solid 1px @sky;
+  border: solid 1px @sky;
 }
 
 #clock {
-  border-top: solid 1px @mauve;
+  border: solid 1px @mauve;
 }
 
 #pulseaudio,
 #pipewire {
-  border-top: solid 1px @red;
+  border: solid 1px @red;
 }
 
 #battery.critical:not(.charging) {
@@ -145,19 +161,15 @@ box.module:hover {
 }
 
 #battery {
-  border-top: solid 1px @green;
+  border: solid 1px @green;
 }
 
 #network {
-  border-top: solid 1px @teal;
+  border: solid 1px @teal;
 }
 
 #language {
-  border-top: solid 1px @yellow;
-}
-
-.icon {
-  color: @blue;
+  border: solid 1px @yellow;
 }
 
 #custom-recorder {
@@ -167,5 +179,5 @@ box.module:hover {
 
 #window {
   margin: 0 16px;
-  color: @subtext0;
+  color: @peach;
 }
