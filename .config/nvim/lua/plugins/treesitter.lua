@@ -3,11 +3,15 @@ return {
 	dependencies = {
 		"windwp/nvim-ts-autotag",
 		"HiPhish/nvim-ts-rainbow2",
+		"tree-sitter-grammars/tree-sitter-hyprlang",
 	},
 	event = { "BufReadPre", "BufNewFile" },
 	build = ":TSUpdate",
 	config = function()
 		local config = require("nvim-treesitter.configs")
+		vim.filetype.add({
+			pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+		})
 
 		config.setup({
 			ensure_installed = {
