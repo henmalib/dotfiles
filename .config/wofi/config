@@ -1,9 +1,10 @@
 allow_images=true
+allow-markup=true
 term=foot
 hide_scroll=true
 no_actions=true
 gtk_dark=true
 image_size=24
-width=35%
-lines=15
+width=30%
+lines=8
 prompt=(*°ｰ°)ﾉ
