@@ -14,9 +14,11 @@ return {
 				css = { "prettierd" },
 				html = { "prettierd" },
 				json = { "prettierd" },
+				markdown = { "prettierd" },
 				lua = { "stylua" },
 				go = { "gofmt" },
-                nix = {"nixpkgs_fmt"}
+				nix = { "nixpkgs_fmt" },
+				python = { "black" },
 			},
 			format_on_save = {
 				timeout_ms = 500,

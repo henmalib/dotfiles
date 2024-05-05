@@ -37,6 +37,7 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
 		"onsails/lspkind.nvim",
+		"Exafunction/codeium.nvim",
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -46,12 +47,14 @@ return {
 		require("luasnip.loaders.from_vscode").lazy_load()
 
 		cmp.setup({
+			experimental = { ghost_text = true },
 			formatting = {
 				format = lspkind.cmp_format({
 					mode = "symbol_text",
 					maxwidth = 50,
 					ellipsis_char = "...",
 					show_labelDetails = true,
+					symbol_map = { Codeium = "" },
 				}),
 			},
 			completion = {
@@ -69,13 +72,14 @@ return {
 				{ name = "emoji" },
 				{ name = "buffer" },
 				{ name = "path" },
+				{ name = "codeium" },
 			}),
 
 			mapping = cmp.mapping.preset.insert({
 				["<Tab>"] = tab_complete(),
 				["<S-Tab>"] = select_prev_or_fallback(),
 				["<C-Space>"] = cmp.mapping.complete(),
-				["<C-ie>"] = cmp.mapping.abort(),
+				-- ["<C-ie>"] = cmp.mapping.abort(),
 
 				["<CR>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
