@@ -9,12 +9,14 @@
   font-size: 13px;
 }
 
+/*
 window#waybar.top label.module {
   box-shadow: inset 0 -3px;
 }
 window#waybar.bottom label.module {
   box-shadow: inset 0 3px;
 }
+*/
 
 window#waybar {
   /* @base
@@ -80,10 +82,9 @@ button.focused,
 */
 }
 
-/* We can't have this one yet */
-box.module:hover {
+/*box.module:hover {
   border: solid 2px @mauve;
-}
+}*/
 
 #cpu,
 #memory,
@@ -179,5 +180,6 @@ box.module {
 
 #window {
   margin: 0 16px;
+  background: transparent;
   color: @peach;
 }
