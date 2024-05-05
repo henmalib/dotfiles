@@ -30,3 +30,7 @@
   background: #cba6f7;
   outline: none;
 }
+
+#input > image.left {
+  color: #cba6f7;
+}
