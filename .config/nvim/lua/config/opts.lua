@@ -27,3 +27,6 @@ opt.updatetime = 250
 
 opt.colorcolumn = "80"
 opt.smartindent = true
+
+vim.opt.spelllang = 'en_us,uk'
+vim.opt.spell = true

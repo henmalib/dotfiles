@@ -10,6 +10,7 @@ return {
 				typescript = { "prettierd" },
 				javascriptreact = { "prettierd" },
 				typescriptreact = { "prettierd" },
+				astro = { "prettierd" },
 				svelte = { "prettierd" },
 				css = { "prettierd" },
 				html = { "prettierd" },
