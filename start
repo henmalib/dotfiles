@@ -19,6 +19,7 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export EDITOR=nvim
 
 export JAVA_HOME=/usr/lib/jvm/default/
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
