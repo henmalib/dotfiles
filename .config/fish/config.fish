@@ -1,3 +1,4 @@
+set fish_greeting
 if status is-interactive
     export GPG_TTY=$(tty)
 end
