@@ -11,3 +11,6 @@ progress-color=over #313244
 
 [urgency=high]
 border-color=#fab387
+
+[app-name=Spotify]
+border-color=#a6e3a1
