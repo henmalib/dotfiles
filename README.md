@@ -7,10 +7,4 @@ cd dotfiles
 stow .
 ```
 
-### For propper spotify window and telegram malloc
-```bash
-yay -S spotifywm-git jemalloc
-```
-
-> [!WARNING]  
-> `swaylock` and `hyprpaper` are using Pictures inside ~/Pictures/Wallpaper which is NOT specified in this repository
+![Preview](./.github/assets/preview-screenshot.png)
