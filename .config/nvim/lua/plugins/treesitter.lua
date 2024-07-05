@@ -14,6 +14,14 @@ return {
 			pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 		})
 
+		require("nvim-ts-autotag").setup({
+			opts = {
+				enable_close = true, -- Auto close tags
+				enable_rename = true, -- Auto rename pairs of tags
+				enable_close_on_slash = false, -- Auto close on trailing </
+			},
+		})
+
 		config.setup({
 			ensure_installed = {
 				"lua",
@@ -24,7 +32,6 @@ return {
 			auto_install = true,
 
 			highlight = { enable = true },
-			autotag = { enable = true },
 			indent = { enable = true },
 			rainbow = { enable = true },
 
