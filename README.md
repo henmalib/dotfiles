@@ -8,3 +8,5 @@ stow .
 ```
 
 ![Preview](./.github/assets/preview-screenshot.png)
+
+![Lockscreen Preview](./.github/assets/lockscreen-preview.png)
