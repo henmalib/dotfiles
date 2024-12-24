@@ -20,11 +20,12 @@ return {
 				go = { "gofmt" },
 				nix = { "nixpkgs_fmt" },
 				python = { "black" },
+				sql = { "sqlfluff" }
 			},
-			format_on_save = {
-				timeout_ms = 500,
+			format_after_save = {
+				timeout_ms = 1000,
 				lsp_fallback = true,
-				async = false,
+				async = true,
 			},
 		})
 
