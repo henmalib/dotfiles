@@ -95,6 +95,7 @@ button.focused,
 #network,
 #language,
 #battery,
+#custom-vpn,
 #clock,
 box.module {
   padding: 2px 16px;
@@ -176,6 +177,14 @@ box.module {
 #custom-recorder {
   color: @red;
   padding-left: 4px;
+}
+
+#custom-vpn.connected {
+  border: solid 1px @green;
+}
+
+#custom-vpn.disconnected {
+  border: solid 1px @red;
 }
 
 #window {

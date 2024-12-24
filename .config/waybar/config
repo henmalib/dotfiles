@@ -13,6 +13,7 @@
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "pulseaudio",
+	"custom/vpn",
     "network",
     "hyprland/language",
     "battery",
@@ -46,6 +47,15 @@
       "default": "󰯉"
     }
   },
+
+"custom/vpn":{
+	"format": "{icon} {0}",
+	"tooltip-format": "{icon}",
+	"exec": "bash $HOME/.config/waybar/modules/vpn_echo.sh",
+	"return-type": "json",
+	"interval": 5,
+	"format-icons": ["",""]
+},
 
   "clock": {
     "format": "{:%H:%M}",
