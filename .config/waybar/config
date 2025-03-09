@@ -13,7 +13,6 @@
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "pulseaudio",
-	"custom/vpn",
     "network",
     "hyprland/language",
     "battery",
