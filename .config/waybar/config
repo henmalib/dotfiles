@@ -10,12 +10,15 @@
     "custom/recorder",
     "hyprland/window"
   ],
-  "modules-center": ["hyprland/workspaces"],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
   "modules-right": [
     "pulseaudio",
     "network",
-    "hyprland/language",
+    "custom/lang",
     "battery",
+    "custom/caffeine",
     "clock"
   ],
   "custom/recorder": {
@@ -25,11 +28,21 @@
     "interval": 1,
     "format": "STOP"
   },
-
+  "custom/caffeine": {
+    "exec": "~/.config/waybar/modules/caffeine.sh status",
+    "on-click": "~/.config/waybar/modules/caffeine.sh switch",
+    "format": "",
+    "interval": 1,
+    "return-type": "json",
+  },
+  "custom/lang": {
+    "exec": "~/.config/waybar/layout.sh",
+    "format": "{} <span color=\"#f9e2af\"> </span>",
+    "return-type": "json"
+  },
   "hyprland/language": {
     "format": "{} <span color=\"#f9e2af\"> </span>"
   },
-
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
@@ -46,40 +59,47 @@
       "default": "󰯉"
     }
   },
-
-"custom/vpn":{
-	"format": "{icon} {0}",
-	"tooltip-format": "{icon}",
-	"exec": "bash $HOME/.config/waybar/modules/vpn_echo.sh",
-	"return-type": "json",
-	"interval": 5,
-	"format-icons": ["",""]
-},
-
+  "custom/vpn": {
+    "format": "{icon} {0}",
+    "tooltip-format": "{icon}",
+    "exec": "bash $HOME/.config/waybar/modules/vpn_echo.sh",
+    "return-type": "json",
+    "interval": 5,
+    "format-icons": [
+      "",
+      ""
+    ]
+  },
   "clock": {
     "format": "{:%H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d}"
   },
-
   "cpu": {
     "format": "{usage}% <span color=\"#b4befe\"></span>",
     "tooltip": false
   },
-
   "memory": {
     "format": "{}% <span color=\"#a6e3a1\"> </span>"
   },
-
   "backlight": {
     "device": "amdgpu_bl0",
     "format": "{percent}% <span color=\"#94e2d5\">{icon}</span>",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
-    "on-scroll-up": "light -A 1",
-    "on-scroll-down": "light -U 1",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "on-scroll-up": "brightnessctl s +1%",
+    "on-scroll-down": "brightnessctl s 1%-",
     "smooth-scrolling-threshold": 1
   },
-
   "battery": {
     "states": {
       "good": 95,
@@ -88,12 +108,16 @@
     },
     "format-full": "",
     "format-plugged": "",
-
     "format": "{capacity}% <span color=\"#a6e3a1\">{icon}</span>",
     "format-charging": "{capacity}% <span color=\"#a6e3a1\"></span>",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
-
   "network": {
     "format-wifi": "({signalStrength}%) <span color=\"#94e2d5\"> </span>]",
     "format-ethernet": "{ipaddr}/{cidr} ",
@@ -102,13 +126,11 @@
     "format-disconnected": "Disconnected ⚠",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
-
   "pulseaudio": {
     "smooth-scrolling-threshold": 1,
     "format": "{volume}% <span color=\"#f38ba8\">{icon}</span>",
     "format-bluetooth": "{volume}% <span color=\"#f38ba8\">{icon}</span>",
     "format-bluetooth-muted": " <span color=\"#f38ba8\">{icon}</span>",
-
     "format-muted": "<span color=\"#f38ba8\"></span>",
     "format-source": "{volume}% ",
     "format-source-muted": "",
@@ -116,7 +138,11 @@
       "headphone": "",
       "hands-free": "",
       "headset": "",
-      "default": ["", "", ""]
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
     "on-click": "pavucontrol"
   }
