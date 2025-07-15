@@ -1,47 +1,23 @@
 return {
-	"nvim-telescope/telescope.nvim",
-	tag = "0.1.5",
-	dependencies = {
-		"nvim-lua/plenary.nvim",
-		{
-			"nvim-telescope/telescope-fzf-native.nvim",
-			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-		},
-	},
-	opts = {
-		extensions = {
-			fzf = {
-				fuzzy = true,
-				override_generic_sorter = true,
-				override_file_sorter = true,
-				case_mode = "smart_case",
-			},
-		},
-	},
-	cmd = "Telescope",
-	keys = {
-		{
-			"<leader>ff",
-			":Telescope find_files<cr>",
-			desc = "Find Files",
-			silent = true,
-			noremap = true,
-		},
+  'nvim-telescope/telescope.nvim',
+  dependencies = { 'nvim-lua/plenary.nvim' },
+  keys = {
+    { "<leader>ff", "<cmd>Telescope find_files<cr>",          desc = "Telescope find files" },
+    { "<leader>fg", "<cmd>Telescope live_grep<cr>",           desc = "Telescope grep files" },
+    { "<leader>fd", "<cmd>Telescope builtin.diagnostics<cr>", desc = "Telescope LSP diagnostics" },
+    "<leader>ev", "<leader>mp", "<leader>ev"
+  },
+  config = function()
+    require("telescope").setup({})
+    local builtin = require("telescope.builtin")
 
-		{
-			"<leader>fg",
-			":Telescope live_grep<cr>",
-			desc = "Find Grep",
-			silent = true,
-			noremap = true,
-		},
 
-		{
-			"<leader>fb",
-			":Telescope buffers<cr>",
-			desc = "Find Buffers",
-			silent = true,
-			noremap = true,
-		},
-	},
+    vim.keymap.set("n", "<leader>ht", builtin.help_tags, { desc = "Telescope help tags" })
+    vim.keymap.set("n", "<leader>mp", builtin.man_pages, { desc = "Telescope Man Pages" })
+    vim.keymap.set("n", "<leader>ev", function()
+      builtin.find_files({
+        cwd = vim.fn.stdpath("config")
+      })
+    end, { desc = "Telescope Edit Vim" })
+  end
 }
